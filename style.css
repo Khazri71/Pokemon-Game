@@ -1,0 +1,133 @@
+/*Variables*/
+:root {
+  --main-color-text: #eee;
+  --main-color-background: #eeeeee5d;
+}
+body {
+  background-image: url("assets/land.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.the-score {
+  margin-top: 30px;
+  width: 200px;
+  height: 40px;
+  border: 2px solid var(--main-color-text);
+  background-color: var(--main-color-background);
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding-top: 5px;
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #f3ebeb;
+  z-index: 4;
+}
+.the-ghost,
+.the-pokemon-ball,
+.the-player {
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+}
+.the-ghost {
+  width: 50px;
+  height: 50px;
+  background-image: url("assets/ghost.png");
+  z-index: 0;
+  opacity: 0.5;
+  -webkit-animation: upDown 3s step-end infinite forwards;
+  animation: upDown 3s step-end infinite forwards;
+}
+.the-pokemon-ball {
+  width: 30px;
+  height: 30px;
+  background-image: url("assets/pokeball.png");
+  z-index: 1;
+}
+.the-player {
+  width: 80px;
+  height: 80px;
+  background-image: url("assets/player_front.png");
+  z-index: 2;
+  background-size: 240px 100%;
+  background-position: -80px 0;
+  border: 2px solid var(--main-color-text);
+  background-color: var(--main-color-background);
+  border-radius: 50%;
+}
+.the-player.walk {
+  -webkit-animation: walkMove 0.3s step-end infinite;
+  animation: walkMove 0.3s step-end infinite;
+}
+/*Animation*/
+@-webkit-keyframes walkMove {
+  0%,
+  32% {
+    background-position: 0 0;
+  }
+  33%,
+  65% {
+    background-position: -80px 0;
+  }
+  66%,
+  100% {
+    background-position: -160px 0;
+  }
+}
+@keyframes walkMove {
+  0%,
+  32% {
+    background-position: 0 0;
+  }
+  33%,
+  65% {
+    background-position: -80px 0;
+  }
+  66%,
+  100% {
+    background-position: -160px 0;
+  }
+}
+@-webkit-keyframes upDown {
+  0%,
+  30% {
+    opacity: 0.6;
+  }
+
+  30%,
+  60% {
+    opacity: 0.8;
+  }
+
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes upDown {
+  0%,
+  30% {
+    opacity: 0.6;
+  }
+
+  30%,
+  60% {
+    opacity: 0.8;
+  }
+
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 1280px) {
+  body {
+    height: 100vh;
+  }
+}

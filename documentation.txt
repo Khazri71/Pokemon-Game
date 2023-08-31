@@ -1,0 +1,26 @@
+--NOTES--
+1-- Search : Position Fixed
+2-- Background Size
+3-- function move() {
+  playerPosition.x += playerVelocity.x;
+  playerPosition.y += playerVelocity.y;
+  PLAYER.style.left = playerPosition.x + "px";
+  PLAYER.style.top = playerPosition.y + "px";
+  requestAnimationFrame(move);
+}
+move();
+4-- Player Velocity 
+
+
+
+
+--ROADMAP--
+1-- Add Assets Folder
+2-- Create Template Html5 , Css3
+3-- Create Logic With Js :
+*** Generate Random  : Grass  - Pokemon Ball
+4-- Animate Player : Animation Walk Css 
+*** Control Player Animation Walk Js
+== on Keydown : walk == on Key Up : Stop  ==  Change Player Position (x , y)*
+5-- Create Score
+
